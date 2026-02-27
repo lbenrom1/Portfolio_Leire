@@ -6,6 +6,20 @@
   src: url('../fonts/Boldonse-Regular.ttf');
 }
 
+@font-face {
+  font-family: Special;
+  src: url('../fonts/SpecialGothicExpandedOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url('../fonts/Poppins-Medium.ttf');
+}
+
+body{
+  font-family: Poppins;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
