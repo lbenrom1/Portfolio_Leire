@@ -2,35 +2,72 @@
 <script setup lang="ts">
 import Button from '@/components/ui/button/Button.vue';
 
+const carpetas = [
+  { 
+    texto: "DISEÑO", 
+    ruta: "/diseño", 
+    img: "/imagines/Portada/archivo 1.png", 
+    textTop: '20px', 
+    textLeft: '1160px' 
+  },
+  { 
+    texto: "COMIC", 
+    ruta: "/comic", 
+    img: "/imagines/Portada/archivo 2.png", 
+    textTop: '20px', 
+    textLeft: '1050px' 
+  },
+  { 
+    texto: "ILUSTRACIÓN", 
+    ruta: "/ilustracion", 
+    img: "/imagines/Portada/archivo 3.png", 
+    textTop: '20px', 
+    textLeft: '915px'
+     
+  },
+  { 
+    texto: "OTROS", 
+    ruta: "/otros", 
+    img: "/imagines/Portada/archivo 4.png", 
+    textTop: '20px', 
+    textLeft: '830px' 
+  },
+]
 
 </script>
 
 <template>
-  <div class="bg-white w-full h-full flex flex-col justify-center items-between gap-50 p-10 ">
+  <div class="bg-[#38362a] w-full h-full flex flex-col justify-center items-between gap-50 ">
     <div>
-      <h1 class="titulo text-8xl pt-45 pb-60 text-[#9fe8b2]">Portfolio</h1>
-      <div class="flex flex-col gap-5 w-250 text-[#9fe8b2]">
+      <h1 class="titulo text-8xl p-10 pt-45 pb-60 text-[#ebd0a1]">Portfolio</h1>
+      <div class="flex flex-col p-10 gap-5 w-250 text-[#ebd0a1]">
         <h2 class="titulo text-md">Sobre mi:</h2>
         <p class="info w-100 md:w-150 lg:w-200 xl:w-250 transition-all">Lorem ipsum dolor sit amet consectetur adipiscing elit aptent euismod, gravida sodales enim non primis cras nullam montes, volutpat dapibus id quam neque arcu duis tortor. Torquent placerat sodales euismod aenean consequat purus aliquam litora dictumst, tempor proin bibendum lobortis porttitor tristique dapibus a, primis ante habitasse egestas mauris imperdiet sagittis quisque. Convallis ante feugiat aptent eleifend sodales vivamus ligula ac, cum vel porttitor quis suscipit odio nec tellus, sapien inceptos ultrices dis lacinia pharetra viverra.</p>
       </div>
     </div>
 
-    <div class="flex flex-col items-stretch gap-1 w-full pb-10">
-      <Button class=" bg-[#32683a]  hover:pb-20 hover:pt-5 hover:bg-[#32683a] transition-all overflow-hidden">
-        <RouterLink to="/diseño">DISEÑO</RouterLink>
-      </Button>
-
-      <Button class=" bg-[#458d4f] hover:pb-20 hover:pt-5 hover:bg-[#458d4f] transition-all">
-        <RouterLink to="/comic">COMIC</RouterLink>
-      </Button>
-
-      <Button class="bg-[#5eaf69] hover:pb-20 hover:pt-5 hover:bg-[#5eaf69] transition-all">
-        <RouterLink to="/ilustracion">ILUSTRACIÓN</RouterLink>
-      </Button>
-
-      <Button class="bg-[#80da8c] hover:pb-20 hover:pt-5 hover:bg-[#80da8c] transition-all">
-        <RouterLink to="/otros">OTROS</RouterLink>
-      </Button>
+    <div class="relative w-full h-125 flex flex-col items-center gap-1 pt-10">
+      <RouterLink
+       v-for="(boton, index) in carpetas"
+       :key="index"
+       :to="boton.ruta"
+       class="carpetas"
+       :style="{
+         top: index * 90 + 'px',
+         zIndex: index + 1
+       }"
+      >
+        <img
+         :src="boton.img"
+         class="w-full h-auto object-contain transform hover:-translate-y-[20px] transition-all duration-300 ease-out"
+        />
+        <div
+        class="texto-imagen"
+        :style="{ top: boton.textTop, left: boton.textLeft }"
+        >
+          {{ boton.texto }}
+        </div>
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -45,4 +82,21 @@ import Button from '@/components/ui/button/Button.vue';
     font-family: Poppins;
 }
 
+.carpetas {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.texto-imagen {
+  position: absolute; /* importante para moverlo dentro de la imagen */
+  color: #38362a;
+  font-size: 1.5rem;
+  font-family: Special;
+  transition: all 0.3s ease-out;
+}
+
+.carpetas:hover .texto-imagen {
+  transform: translateY(-20px);
+}
 </style>

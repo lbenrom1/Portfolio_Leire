@@ -8,7 +8,7 @@
         <RouterView/>
       </main>
 
-      <footer class="text-center bg-[#a1c3a6]  w-full py-8">
+      <footer class="relative z-20 -mt-20 text-center bg-[#439c82] w-full py-8">
         <div>
 	       <strong>Portfolio</strong>
         </div>

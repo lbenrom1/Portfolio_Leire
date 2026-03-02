@@ -16,7 +16,7 @@ interface Galeria {
 const PropsTrabajo = defineProps< {
   items:Galeria[],
   imagePath: string,
-  baseRoute: string; // Ejemplo: '/diseño/gallery'
+  baseRoute: string; 
 }>();
 
 const router = useRouter();
@@ -27,10 +27,10 @@ const inPagina = 2
 
 const nuncPagina = ref (1)
 
-const totalPaginae = computed(() => Math.ceil(PropsTrabajo.items.length / inPagina)) //el ceil redondea la operacion, characters length es la longitud de la lista
+const totalPaginae = computed(() => Math.ceil(PropsTrabajo.items.length / inPagina)) 
 
 const visibles = computed(() => {
-    const inicio = (nuncPagina.value - 1) * inPagina //el valor inicial .1 x el numero de la pagina
+    const inicio = (nuncPagina.value - 1) * inPagina 
     const fin = inicio + inPagina
     return PropsTrabajo.items.slice(inicio,fin)
 })
@@ -42,9 +42,9 @@ const ireAdPaginam = (pagina: number) => {
 
 }
 
-const paginaNumeri = computed(() => 
-    [...Array(totalPaginae.value)].map((_, i) => i + 1)
-)
+//const paginaNumeri = computed(() => 
+  //  [...Array(totalPaginae.value)].map((_, i) => i + 1)
+//)
 
 //const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
 
@@ -63,10 +63,10 @@ const paginaNumeri = computed(() =>
       <button
         @click="ireAdPaginam(nuncPagina - 1)" 
         :disabled="nuncPagina === 1"
-        :class="['px-4 py-2 rounded-md font-medium transition-colors',
+        :class="['px-2 py-2 rounded-full font-medium transition-colors',
         nuncPagina === 1
         ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-        : 'bg-[#ffde00] hover:bg-[#ee3133] hover:text-white'
+        : 'bg-[#9be67d] hover:bg-[#4c9b55] hover:text-white'
         ]"
         >
            <ChevronLeft />
@@ -112,10 +112,10 @@ const paginaNumeri = computed(() =>
         <button
           @click="ireAdPaginam(nuncPagina+1)" 
           :disabled="nuncPagina === totalPaginae"
-          :class="['px-4 py-2 rounded-md font-medium transition-colors bg-[#ffde00] hover:bg-[#ee3133] hover:text-white',
+          :class="['px-2 py-2 rounded-full font-medium transition-colors',
             nuncPagina === totalPaginae
             ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-            : 'bg-[#ffde00] hover:bg-[#ee3133] hover:text-white'
+            : 'bg-[#9be67d] hover:bg-[#4c9b55] hover:text-white'
             ]"
           >
             <ChevronRight />
