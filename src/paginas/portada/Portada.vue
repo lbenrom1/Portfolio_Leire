@@ -3,11 +3,7 @@
 import Button from '@/components/ui/button/Button.vue';
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 import { Toggle } from "@/components/ui/toggle"
@@ -22,67 +18,59 @@ const carpetas = [
     texto: "DISEÑO", 
     ruta: "/diseño", 
     img: "/imagines/Portada/archivo 1.png", 
-    textTop: '20px', 
-    textLeft: '1160px' 
+    textTop: '10%', 
+    textLeft: '76%',
+    objectPosition: '80% 30%'
   },
   { 
     texto: "COMIC", 
     ruta: "/comic", 
     img: "/imagines/Portada/archivo 2.png", 
-    textTop: '20px', 
-    textLeft: '1050px' 
+    textTop: '10%', 
+    textLeft: '68%' 
   },
   { 
     texto: "ILUSTRACIÓN", 
     ruta: "/ilustracion", 
     img: "/imagines/Portada/archivo 3.png", 
-    textTop: '20px', 
-    textLeft: '915px'
+    textTop: '10%', 
+    textLeft: '60%'
      
   },
   { 
     texto: "OTROS", 
     ruta: "/otros", 
     img: "/imagines/Portada/archivo 4.png", 
-    textTop: '20px', 
-    textLeft: '830px' 
+    textTop: '10%', 
+    textLeft: '55%' 
   },
 ]
 
-const videreMenu = ref<boolean>(true)
+const videreMenu = ref<boolean>(false)
 
-/*const handleResize = () => {
-  if(window.innerWidth <= 640) {
-    videreMenu.value = false;
-  }else{
-   videreMenu.value = true;
-  }
-}
-
-onMounted(()=>{
-  handleResize()
-  window.addEventListener('resize', handleResize)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', handleResize)})
-*/
 
 </script>
 
 <template>
   
-  <Toggle
-  class="miInfo flex ml-300 h-10 w-auto top-2 right-4 bg-[#83b7b6] text-lg f"
+  <Button
+  class="miInfo flex ml-300 h-10 w-auto top-2 right-4 bg-[#83b7b6] text-lg text-[#38362a] hover:bg-[#38362a] hover:text-[#83b7b6]"
   @click="videreMenu = !videreMenu"
   >
     Más Sobre mi:
     <UserRoundSearch />
-  </Toggle>
+  </Button>
 
   <Card 
-  v-show="videreMenu"
-  class="miInfo flex ml-285 w-100 h-full rounded-none bg-[#83b7b6] text-[#38362a] border-none">
+  v-show="videreMenu===true"
+  class="miInfo fixed top-0 right-0
+    h-screen
+    w-96
+    bg-[#83b7b6]
+    text-[#38362a]
+    border-none
+    rounded-none
+    transition-all duration-300">
 
   <CardContent>
     <Toggle
@@ -146,34 +134,37 @@ onUnmounted(() => {
 
   </Card>
 
-  <div class="bg-[#38362a] w-full h-full flex flex-col justify-center items-between gap-25 ">
+  <div class="bg-[#38362a] w-full h-full flex flex-col justify-center items-between md:gap-10 lg:gap-25 ">
 
     <div>
-      <h1 class="titulo text-9xl p-10 pt-30 text-[#ebd0a1]">PORTFOLIO</h1>
+      <h1 class="titulo text-6xl md:text-8xl lg:text-9xl p-10 pt-30 text-[#ebd0a1] transition-all">PORTFOLIO</h1>
       <div class="flex flex-col p-10 gap-5 w-250 text-[#ebd0a1]">
         <h2 class="titulo text-md">Sobre mi:</h2>
         <p class="info w-100 md:w-150 lg:w-200 xl:w-250 transition-all">Lorem ipsum dolor sit amet consectetur adipiscing elit aptent euismod, gravida sodales enim non primis cras nullam montes, volutpat dapibus id quam neque arcu duis tortor. Torquent placerat sodales euismod aenean consequat purus aliquam litora dictumst, tempor proin bibendum lobortis porttitor tristique dapibus a, primis ante habitasse egestas mauris imperdiet sagittis quisque. Convallis ante feugiat aptent eleifend sodales vivamus ligula ac, cum vel porttitor quis suscipit odio nec tellus, sapien inceptos ultrices dis lacinia pharetra viverra.</p>
       </div>
     </div>
 
-    <div class="relative w-full h-125 flex flex-col items-center gap-1 pt-10">
+    <div class="relative h-auto md:w-full pt-10 z-0"
+       style="height: 600px;"
+    >
       <RouterLink
        v-for="(boton, index) in carpetas"
        :key="index"
        :to="boton.ruta"
-       class="carpetas"
+       class="carpetas hover:z-50"
        :style="{
-         top: index * 90 + 'px',
+         top: index * 120 + 'px',
          zIndex: index + 1
        }"
       >
         <img
-         :src="boton.img"
-         class="w-full h-auto object-contain transform hover:-translate-y-[20px] transition-all duration-300 ease-out"
+          :src="boton.img"
+          class="w-full h-auto md:w-full object-cover transition-all duration-300 hover:-translate-y-3 -translate-x-95 sm:-translate-x-50 md:-translate-x-10 lg:translate-x-0"
         />
+
         <div
-        class="texto-imagen"
-        :style="{ top: boton.textTop, left: boton.textLeft }"
+         class="texto-imagen text-md md:text-lg lg:text-xl xl:text-2xl -translate-x-95 sm:-translate-x-50 md:-translate-x-10 lg:translate-x-0"
+         :style="{ top: boton.textTop, left: boton.textLeft, }"
         >
           {{ boton.texto }}
         </div>
@@ -202,7 +193,6 @@ onUnmounted(() => {
 .texto-imagen {
   position: absolute; /* importante para moverlo dentro de la imagen */
   color: #38362a;
-  font-size: 1.5rem;
   font-family: Special;
   transition: all 0.3s ease-out;
 }
