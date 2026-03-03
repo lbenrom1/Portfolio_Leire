@@ -159,11 +159,11 @@ const videreMenu = ref<boolean>(false)
       >
         <img
           :src="boton.img"
-          class="w-full h-auto md:w-full object-cover transition-all duration-300 hover:-translate-y-3 -translate-x-95 sm:-translate-x-50 md:-translate-x-10 lg:translate-x-0"
+          class="w-full h-auto md:w-full object-cover transition-all duration-300 hover:-translate-y-3 -translate-x-105 sm:-translate-x-50 md:-translate-x-10 lg:translate-x-0"
         />
 
         <div
-         class="texto-imagen text-md md:text-lg lg:text-xl xl:text-2xl -translate-x-95 sm:-translate-x-50 md:-translate-x-10 lg:translate-x-0"
+         class="texto-imagen text-md md:text-lg lg:text-xl xl:text-2xl -translate-x-105 sm:-translate-x-50 md:-translate-x-10 lg:translate-x-0"
          :style="{ top: boton.textTop, left: boton.textLeft, }"
         >
           {{ boton.texto }}

@@ -14,16 +14,19 @@ interface Galeria {
 }
 
 const PropsTrabajo = defineProps< {
-  items:Galeria[],
+  items: Galeria[],
   imagePath: string,
-  baseRoute: string; 
+  baseRoute: string,
+  primaryColor?: string,
+  secondaryColor?: string,
+  accentColor?: string
 }>();
 
 const router = useRouter();
 
 
 //CONTEO DE CARDS
-const inPagina = 2
+const inPagina = 3
 
 const nuncPagina = ref (1)
 
@@ -53,31 +56,36 @@ const ireAdPaginam = (pagina: number) => {
    // router.push(`${PropsTrabajo.baseRoute}/${id}`)
 //}
 
+const primaryColor = computed(() => PropsTrabajo.primaryColor ?? '#ebd0a1')
+//const secondaryColor = computed(() => PropsTrabajo.secondaryColor ?? '#4c9b55')
+const accentColor = computed(() => PropsTrabajo.accentColor ?? '#9be67d')
+
 </script>
 
 <template>
-  <div class="w-250 mr-60 ml-60 flex flex-row justify-center items-center">
+  <div class="w-full flex flex-row justify-center items-center">
     <div 
     v-if="totalPaginae > 1"
     class="flex flex-row items-center justify-center gap-2 mt-4">
       <button
-        @click="ireAdPaginam(nuncPagina - 1)" 
-        :disabled="nuncPagina === 1"
-        :class="['px-2 py-2 rounded-full font-medium transition-colors',
-        nuncPagina === 1
-        ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-        : 'bg-[#9be67d] hover:bg-[#4c9b55] hover:text-white'
-        ]"
+       @click="ireAdPaginam(nuncPagina - 1)"
+       :disabled="nuncPagina === 1"
+       :style="{
+        backgroundColor: nuncPagina === 1 ? accentColor : primaryColor
+      }"
+      class="px-2 py-2 rounded-full font-medium transition-colors"
         >
            <ChevronLeft />
         </button>
     </div>
 
-    <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-10 lg:gap-5 xl:gap-25 w-full max-w-350 my-8 mx-auto transition-all">
+    <div class="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10 lg:gap-5 xl:gap-25 w-full max-w-350 my-3 mx-auto transition-all">
         <Card 
-         class="cursor-pointer w-70 h-80 lg:w-90 lg:h-100 hover:bg-[#ee3133] hover:text-white hover:w-80 hover:h-90 lg:hover:w-100 lg:hover:h-110 transition-all"
+         class="cursor-pointer w-70 h-80 lg:w-90 lg:h-85 hover:text-white hover:w-80 hover:h-90 lg:hover:w-100 lg:hover:h-90 border-none transition-all"
          v-for="trabajo in visibles" 
-         :key="trabajo.id" >
+         :key="trabajo.id"
+         :style="{ backgroundColor: primaryColor }"
+         >
           <CardContent 
            class="flex flex-col justify-center items-center gap-1 w-full px-0"
            @click="router.push(`${PropsTrabajo.baseRoute}/${ trabajo.id }`)"
@@ -85,8 +93,8 @@ const ireAdPaginam = (pagina: number) => {
             <img 
             :src="`${ PropsTrabajo.imagePath }${trabajo.imago}`" 
             alt="trabajo.nomen"
-            class="w-60 h-60 lg:w-80 lg:h-80 object-cover object-top bg-[ffde00] rounded border border-black">
-            <h2 class="font-medium text-lg">{{trabajo.nomen}}</h2>
+            class="w-60 h-60 lg:w-70 lg:h-70 object-cover object-top rounded border-none">
+            <h2 class="font-medium text-xl text-[#38362a]">{{trabajo.nomen}}</h2>
           </CardContent>
       </Card>
     </div>
@@ -110,13 +118,12 @@ const ireAdPaginam = (pagina: number) => {
         </!--button-->
 
         <button
-          @click="ireAdPaginam(nuncPagina+1)" 
+          @click="ireAdPaginam(nuncPagina + 1)"
           :disabled="nuncPagina === totalPaginae"
-          :class="['px-2 py-2 rounded-full font-medium transition-colors',
-            nuncPagina === totalPaginae
-            ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-            : 'bg-[#9be67d] hover:bg-[#4c9b55] hover:text-white'
-            ]"
+          :style="{
+           backgroundColor: nuncPagina === totalPaginae ? accentColor : primaryColor
+          }"
+          class="px-2 py-2 rounded-full font-medium transition-colors"
           >
             <ChevronRight />
           </button>
