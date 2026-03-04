@@ -1,12 +1,13 @@
 
 <script setup lang="ts">
 import Button from '@/components/ui/button/Button.vue';
+
 import {
   Card,
   CardContent,
   CardTitle,
 } from "@/components/ui/card"
-import { Toggle } from "@/components/ui/toggle"
+
 import { UserRoundSearch, NotebookPen, Instagram, Mail  } from 'lucide-vue-next';
 import { onMounted, onUnmounted, ref } from 'vue';
 
@@ -48,6 +49,8 @@ const carpetas = [
 
 const videreMenu = ref<boolean>(false)
 
+const cerrarMenu = ref<boolean>(false) 
+
 
 </script>
 
@@ -73,12 +76,12 @@ const videreMenu = ref<boolean>(false)
     transition-all duration-300">
 
   <CardContent>
-    <Toggle
-     class="miInfo flex justify-center top-2 ml-75 mr-6 h-10 w-10 bg-[#38362a]"
+    <Button
+     class="miInfo flex justify-center top-2 ml-75 mr-6 h-10 w-10 bg-[#38362a] hover:bg-[#83b7b6] hover:text-[#38362a] text-[#83b7b6]"
      @click="videreMenu = !videreMenu"
     >
-     <UserRoundSearch class="text-[#83b7b6] text-lg"/>
-    </Toggle>
+     <UserRoundSearch class="  text-lg"/>
+    </Button>
 
     <div class="flex flex-col gap-5">
       <CardTitle class="titulo">Habilidades</CardTitle>
@@ -171,6 +174,16 @@ const videreMenu = ref<boolean>(false)
       </RouterLink>
     </div>
 
+
+    <footer class="absolute pb-5 -bottom-130 md:-bottom-135 lg:-bottom-145 z-50 bg-[#439c82] w-full py-8 text-center ">
+        <div>
+	       <strong>Portfolio</strong>
+        </div>
+
+        <small>
+	       Leire Benítez Romeo
+        </small>
+    </footer>
   </div>
 </template>
 
