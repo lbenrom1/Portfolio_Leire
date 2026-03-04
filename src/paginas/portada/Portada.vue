@@ -11,9 +11,6 @@ import {
 import { UserRoundSearch, NotebookPen, Instagram, Mail  } from 'lucide-vue-next';
 import { onMounted, onUnmounted, ref } from 'vue';
 
-
-
-
 const carpetas = [
   { 
     texto: "DISEÑO", 
@@ -66,14 +63,7 @@ const cerrarMenu = ref<boolean>(false)
 
   <Card 
   v-show="videreMenu===true"
-  class="miInfo fixed top-0 right-0
-    h-screen
-    w-96
-    bg-[#83b7b6]
-    text-[#38362a]
-    border-none
-    rounded-none
-    transition-all duration-300">
+  class="miInfo fixed top-0 right-0 h-screenw-96 bg-[#83b7b6] text-[#38362a] border-none rounded-none transition-all duration-300">
 
   <CardContent>
     <Button
@@ -173,7 +163,6 @@ const cerrarMenu = ref<boolean>(false)
         </div>
       </RouterLink>
     </div>
-
 
     <footer class="absolute pb-5 -bottom-130 md:-bottom-135 lg:-bottom-145 z-50 bg-[#439c82] w-full py-8 text-center ">
         <div>
