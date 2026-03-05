@@ -9,20 +9,27 @@ export interface Proyectos {
 export const proyectos: Proyectos[] = [
   {
     id:0,
-    nomen:'1984',
-    imago:'Titulo.png',
+    nomen:'Ilustraciones 1984',
+    imago:'Guarda 1 mock up.png',
     quote:'"",',
     descriptione:'',
   },
   {
     id: 1,
-    nomen: "Articulo",
-    imago: "Titulo.png",
+    nomen: "Ilustración para articulo",
+    imago: "articulo.jpg",
     quote:'"",',
     descriptione:'',
   },
     {
     id: 3,
+    nomen: "Infierno de Dante",
+    imago: "dante.jpg",
+    quote:'"",',
+    descriptione:'',
+  },
+   {
+    id: 4,
     nomen: "Ilustración",
     imago: "Titulo.png",
     quote:'"",',

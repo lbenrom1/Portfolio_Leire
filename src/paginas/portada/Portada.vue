@@ -63,7 +63,7 @@ const cerrarMenu = ref<boolean>(false)
 
   <Card 
   v-show="videreMenu===true"
-  class="miInfo fixed top-0 right-0 h-screenw-96 bg-[#83b7b6] text-[#38362a] border-none rounded-none transition-all duration-300">
+  class="miInfo fixed top-0 right-0 h-250 bg-[#83b7b6] text-[#38362a] border-none rounded-none transition-all duration-300 pr-10">
 
   <CardContent>
     <Button

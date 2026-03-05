@@ -63,10 +63,10 @@ const accentColor = computed(() => PropsTrabajo.accentColor ?? '#9be67d')
 </script>
 
 <template>
-  <div class="w-full flex flex-row justify-center items-center">
+  <div class="w-full grid grid-cols-2 xl:grid-cols-[auto_1fr_auto] items-center">
     <div 
     v-if="totalPaginae > 1"
-    class="flex flex-row items-center justify-center gap-2 mt-4">
+    class="flex justify-end mt-4 order-2 xl:order-0">
       <button
        @click="ireAdPaginam(nuncPagina - 1)"
        :disabled="nuncPagina === 1"
@@ -79,7 +79,7 @@ const accentColor = computed(() => PropsTrabajo.accentColor ?? '#9be67d')
         </button>
     </div>
 
-    <div class="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10 lg:gap-5 xl:gap-25 w-full max-w-350 my-3 mx-auto transition-all">
+    <div class="col-span-2 xl:col-span-1 flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10 lg:gap-5 xl:gap-25 w-full max-w-350 my-3 mx-auto transition-all order-1 xl:order-0">
         <Card 
          class="cursor-pointer w-70 h-80 lg:w-90 lg:h-85 hover:text-white hover:w-80 hover:h-90 lg:hover:w-100 lg:hover:h-90 border-none transition-all"
          v-for="trabajo in visibles" 
@@ -101,21 +101,7 @@ const accentColor = computed(() => PropsTrabajo.accentColor ?? '#9be67d')
 
     <div 
     v-if="totalPaginae > 1"
-    class="flex flex-row items-center justify-center gap-2 mt-4">
-      
-
-           
-        <!--button
-          v-for="pagina in paginaNumeri" 
-          @click="ireAdPaginam(pagina)"
-          :class="['w-10 h-10 rounded-md font-medium transition-colors ', 
-            nuncPagina === pagina
-            ? 'bg-[#ee3133] text-white'
-            :'bg-[#ffde00]  hover:hover:bg-[#ee3133] hover:text-white'
-            ]"
-      
-          {{ pagina }}
-        </!--button-->
+    class="lex justify-start mt-4 order-3 xl:order-0">
 
         <button
           @click="ireAdPaginam(nuncPagina + 1)"
@@ -123,7 +109,7 @@ const accentColor = computed(() => PropsTrabajo.accentColor ?? '#9be67d')
           :style="{
            backgroundColor: nuncPagina === totalPaginae ? accentColor : primaryColor
           }"
-          class="px-2 py-2 rounded-full font-medium transition-colors"
+          class="px-2 py-2 rounded-full font-medium transition-colors order-5 lg:order-0"
           >
             <ChevronRight />
           </button>
