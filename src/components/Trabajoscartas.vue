@@ -60,6 +60,10 @@ const primaryColor = computed(() => PropsTrabajo.primaryColor ?? '#ebd0a1')
 //const secondaryColor = computed(() => PropsTrabajo.secondaryColor ?? '#4c9b55')
 const accentColor = computed(() => PropsTrabajo.accentColor ?? '#9be67d')
 
+const navigate = (id: number) => {
+  router.push(`${PropsTrabajo.baseRoute}/${id}`)
+}
+
 </script>
 
 <template>
@@ -85,6 +89,7 @@ const accentColor = computed(() => PropsTrabajo.accentColor ?? '#9be67d')
          v-for="trabajo in visibles" 
          :key="trabajo.id"
          :style="{ backgroundColor: primaryColor }"
+         @click="navigate(trabajo.id)"
          >
           <CardContent 
            class="flex flex-col justify-center items-center gap-1 w-full px-0"

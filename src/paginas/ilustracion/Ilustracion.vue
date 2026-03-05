@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import Trabajoscartas from '@/components/Trabajoscartas.vue';
 import { proyectos } from './data';
+
 </script>
 
 <template>
@@ -43,7 +44,9 @@ import { proyectos } from './data';
        </div>
       </section>
     
-    
+    <div>
+      <RouterView/>
+    </div>
 </template>
 
 <style scoped>

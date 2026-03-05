@@ -4,6 +4,7 @@ export interface Proyectos {
   imago:string
   quote:string
   descriptione:string
+  photos:string[]
 }
 
 export const proyectos: Proyectos[] = [
@@ -13,6 +14,7 @@ export const proyectos: Proyectos[] = [
     imago:'Guarda 1 mock up.png',
     quote:'"",',
     descriptione:'',
+    photos:["esto","ojo"]
   },
   {
     id: 1,
@@ -20,6 +22,7 @@ export const proyectos: Proyectos[] = [
     imago: "articulo.jpg",
     quote:'"",',
     descriptione:'',
+    photos:["articulo", "esto"]
   },
     {
     id: 3,
@@ -27,6 +30,7 @@ export const proyectos: Proyectos[] = [
     imago: "dante.jpg",
     quote:'"",',
     descriptione:'',
+    photos:["dante","esto"]
   },
    {
     id: 4,
@@ -34,5 +38,6 @@ export const proyectos: Proyectos[] = [
     imago: "Titulo.png",
     quote:'"",',
     descriptione:'',
+    photos:["dante","articulo", "esto","ojo"]
   },
 ]

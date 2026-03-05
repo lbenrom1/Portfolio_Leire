@@ -3,6 +3,7 @@ import Comic from "@/paginas/comic/Comic.vue";
 import Diseño from "@/paginas/diseño/Diseño.vue";
 import TrabajosDiseño from "@/paginas/diseño/TrabajosDiseño.vue";
 import Ilustracion from "@/paginas/ilustracion/Ilustracion.vue";
+import TrabajoIlustracion from "@/paginas/ilustracion/TrabajoIlustracion.vue";
 import Otros from "@/paginas/otros/Otros.vue";
 import Layout from "@/paginas/portada/Layout.vue";
 import Portada from "@/paginas/portada/Portada.vue";
@@ -36,7 +37,7 @@ export const router = createRouter({
       component: Diseño,
       children:[
         {
-          path:'',
+          path:':id',
           name:'diseño-trabajo',
           component: TrabajosDiseño
         }
@@ -46,6 +47,13 @@ export const router = createRouter({
       path: '/ilustracion',
       name: 'ilustracion',
       component: Ilustracion,
+      children:[
+        {
+          path: ':id',
+          name:'ilustracion-trabajo',
+          component: TrabajoIlustracion
+        }
+      ]
     },
     {
       path: '/otros',
@@ -53,7 +61,7 @@ export const router = createRouter({
       component: Otros,
     },
     {
-      path: '/:patchMatch(.*)',
+      path: '/:pathMatch(.*)*',
       redirect: '/'
     }
   ]
