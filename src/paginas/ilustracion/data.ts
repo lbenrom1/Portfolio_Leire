@@ -5,6 +5,8 @@ export interface Proyectos {
   quote:string
   descriptione:string
   photos:string[]
+  imgProceso:string
+  bocetos: string[]
 }
 
 export const proyectos: Proyectos[] = [
@@ -13,31 +15,39 @@ export const proyectos: Proyectos[] = [
     nomen:'Ilustraciones 1984',
     imago:'Guarda 1 mock up.png',
     quote:'"",',
-    descriptione:'',
-    photos:["esto","ojo"]
+    descriptione:'Desarrollar un conjunto de piezas para un libro ilustrado a partir de la obra de 1984 de George Orwell, atendiendo al público lector y a las convenciones editoriales. La propuesta integrará una base pictórica manual (acrílico o gouache) y un acabado digital para maquetación y retoques. El proyecto tinen que incluir: Portada, lomo, contraportada, doble página con ilustración continua, doble página (1 página ilustración + 1 página texto) y guardas.',
+    photos:["esto","ojo"] ,
+    imgProceso:'Simple mock up.png',
+    bocetos:["dante","articulo","ojo"]
   },
   {
     id: 1,
     nomen: "Ilustración para articulo",
     imago: "articulo.jpg",
     quote:'"",',
-    descriptione:'',
-    photos:["articulo", "esto"]
+    descriptione:'El proyecto consiste en elaborar una ilustración conceptual a partir de un artículo de opinión de prensa. El ejercicio busca que el alumnado desarrolle la capacidad de análisis de un texto, sintetizando sus ideas principales en una imagen que funcione como acompañamiento visual. El resultado final se presentará en una doble página maquetada, integrando texto e ilustración de forma coherente y profesional.',
+    photos:["articulo", "esto"],
+    imgProceso:'Titulo.png',
+    bocetos:["dante","articulo","ojo"]
   },
     {
     id: 3,
     nomen: "Infierno de Dante",
     imago: "dante.jpg",
     quote:'"",',
-    descriptione:'',
-    photos:["dante","esto"]
+    descriptione:'Una ilustración de la obra de Dante, la Divina Comedia.',
+    photos:["dante","esto"],
+    imgProceso:'esto.jpg',
+    bocetos:["dante","articulo","ojo"]
   },
    {
     id: 4,
     nomen: "Ilustración",
     imago: "Titulo.png",
     quote:'"",',
-    descriptione:'',
-    photos:["dante","articulo", "esto","ojo"]
+    descriptione:'blo blo blo',
+    photos:["dante","articulo", "esto","ojo"],
+    imgProceso:'guarda.png',
+    bocetos:["dante","articulo","ojo"]
   },
 ]

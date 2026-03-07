@@ -17,19 +17,25 @@ interface Props {
     autoplayDelay?: number
     loop?: boolean
     dragFree?: boolean
+    bg?: string
+    text?: string
+    accentBg?: string
+    accentText?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
  autoplayDelay:2000,
  loop: true,
- dragFree:true
+ dragFree:true,
+ bgClass: "bg-gray-900",
+ textClass: "text-white"
 })
 
 </script>
 
 <template>
   <Carousel 
-  class="bg-gray-900 w-full max-w-md md:max-w-2xl lg:max-w-4xl"
+  :class="[props.bg,'w-full max-w-md md:max-w-2xl lg:max-w-4xl']"
   :opts="{
     loop:props.loop,
     dragFree: props.dragFree
@@ -38,8 +44,8 @@ const props = withDefaults(defineProps<Props>(), {
     <CarouselContent>
       <CarouselItem v-for="(photo,index) in props.photos" :key="index">
         <div class="p-1">
-          <Card class="bg-gray-900 border-none">
-            <CardContent class="bg-gray-900 flex aspect-6/4 items-center justify-center p-6">
+          <Card :class="[props.bg,'border-none shadow-none ']">
+            <CardContent :class="[props.bg,'flex aspect-6/4 items-center justify-center p-6']">
               
               <img 
               :src="`${props.basePath}/${photo}.jpg`" 
@@ -51,8 +57,10 @@ const props = withDefaults(defineProps<Props>(), {
         </div>
       </CarouselItem>
     </CarouselContent>
-    <CarouselPrevious class="bg-gray-900 text-white hidden md:flex justify-center items-center"/>
-    <CarouselNext class="bg-gray-900 text-white hidden md:flex justify-center items-center"/>
+    <CarouselPrevious :class="[props.bg, props.text, props.accentBg, props.accentText,
+    'hidden md:flex justify-center items-center border-none']"/>
+    <CarouselNext :class="[props.bg, props.text, props.accentBg, props.accentText,
+    'hidden md:flex justify-center items-center border-none']"/>
   </Carousel>
 </template>
 
