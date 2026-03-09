@@ -10,6 +10,7 @@ export interface Proyectos {
   p1: string
   p2: string
   p3?: string
+  finales: string[]
 }
 
 export const proyectos: Proyectos[] = [
@@ -24,7 +25,8 @@ export const proyectos: Proyectos[] = [
     bocetos:["dante","articulo","ojo","esto"],
     p1:"Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, porta metus eros tempor lacinia in ullamcorper. Auctor tortor interdum eleifend viverra sagittis fames luctus habitasse in est platea per lobortis felis, non eget malesuada ornare condimentum tristique integer aenean semper nascetur id hac quisque. Nulla eget litora accumsan massa dui curae ultricies, tortor vitae conubia tellus varius dictum cubilia, fames habitant facilisis aliquam placerat inceptos, quis senectus et netus natoque torquent",
     p2:"Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, porta metus eros tempor lacinia in ullamcorper. Auctor tortor interdum eleifend viverra sagittis fames luctus habitasse in est platea per lobortis felis, non eget malesuada ornare condimentum tristique integer aenean semper nascetur id hac quisque. Nulla eget litora accumsan massa dui curae ultricies, tortor vitae conubia tellus varius dictum cubilia, fames habitant facilisis aliquam placerat inceptos, quis senectus et netus natoque torquent",
-    p3:"Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, porta metus eros tempor lacinia in ullamcorper. Auctor tortor interdum eleifend viverra sagittis fames luctus habitasse in est platea per lobortis felis, non eget malesuada ornare condimentum tristique integer aenean semper nascetur id hac quisque. Nulla eget litora accumsan massa dui curae ultricies, tortor vitae conubia tellus varius dictum cubilia, fames habitant facilisis aliquam placerat inceptos, quis senectus et netus natoque torquent"
+    p3:"Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis, porta metus eros tempor lacinia in ullamcorper. Auctor tortor interdum eleifend viverra sagittis fames luctus habitasse in est platea per lobortis felis, non eget malesuada ornare condimentum tristique integer aenean semper nascetur id hac quisque. Nulla eget litora accumsan massa dui curae ultricies, tortor vitae conubia tellus varius dictum cubilia, fames habitant facilisis aliquam placerat inceptos, quis senectus et netus natoque torquent",
+    finales:["dante","articulo","ojo","esto"],
   },
   {
     id: 1,
@@ -37,6 +39,7 @@ export const proyectos: Proyectos[] = [
     bocetos:["dante","articulo","ojo"],
     p1:"",
     p2:"",
+    finales:["dante","articulo","ojo","esto"],
   },
     {
     id: 3,
@@ -49,6 +52,7 @@ export const proyectos: Proyectos[] = [
     bocetos:["dante","articulo","ojo"],
     p1:"",
     p2:"",
+    finales:["dante","articulo","ojo","esto"],
   },
    {
     id: 4,
@@ -61,5 +65,6 @@ export const proyectos: Proyectos[] = [
     bocetos:["dante","articulo","ojo"],
     p1:"",
     p2:"",
+    finales:["dante","articulo","ojo","esto"],
   },
 ]
