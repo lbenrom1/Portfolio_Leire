@@ -5,6 +5,11 @@ import { proyectos, type Proyectos } from './data';
 import { useRoute, useRouter } from 'vue-router';
 import Carrus from '@/components/Carrus.vue';
 import ScrollArea from '@/components/ui/scroll-area/ScrollArea.vue';
+import emblaCarouselVue from 'embla-carousel-vue'
+
+const [emblaRef] = emblaCarouselVue({
+  dragFree: true
+})
 
 const route = useRoute()
 
@@ -58,7 +63,7 @@ const bocetos = computed(() => proyecto.value?.bocetos || []);
 
           <img
           :src="`/imagines/Ilustracion/${proyecto?.imago}`"
-          class=" w-100 h-auto mr-0 ml-10 md:ml-20 lg:ml-0 md:mr-10"
+          class=" w-100 h-auto mr-0 ml-10 md:ml-20 lg:ml-0 md:mr-10 rounded-lg"
           />
         </div>
        </section>
@@ -69,21 +74,17 @@ const bocetos = computed(() => proyecto.value?.bocetos || []);
          Bocetos:
         </h3>
 
-        <div class="grid md:grid-cols-3 mr-10">
+        <div class="w-full overflow-hidden" ref="emblaRef">
 
-          <div class="hidden md:block"></div>
+          <div class="flex gap-6 py-6 px-10">
 
-          <div class="md:col-span-2 overflow-x-auto no-scrollbar">
-            <div class="flex gap-6 py-6 w-max">
+            <img
+             v-for="boceto in bocetos"
+             :key="boceto"
+             :src="`/imagines/Ilustracion/${boceto}.jpg`"
+             class="h-60 w-auto object-contain rounded-lg flex-none cursor-grab"
+            />
 
-              <img
-               v-for="boceto in bocetos"
-               :key="boceto"
-               :src="`/imagines/Ilustracion/${boceto}.jpg`"
-               class="h-60 w-auto object-contain rounded-lg"
-              />
-
-            </div>
           </div>
 
         </div>
@@ -94,12 +95,37 @@ const bocetos = computed(() => proyecto.value?.bocetos || []);
         <h3 class="titulo text-2xl ml-20 text-[#38362a]">
          Ejecución:
         </h3>
+
+        <div class="flex my-7">
+          <p class="w-100 md:w-200 lg:w-110 text-[#201e1a] ml-10 md:ml-20 lg:ml-25 mt-2">
+           {{ proyecto?.p1 }}</p>
+          <p class="w-100 md:w-200 lg:w-110 text-[#201e1a] ml-10 md:ml-20 lg:ml-25 mt-2">
+           {{ proyecto?.p2 }}</p>
+          <p class="w-100 md:w-200 lg:w-110 text-[#201e1a] ml-10 md:ml-20 lg:ml-25 mt-2">
+           {{ proyecto?.p3 }}</p>
+        </div>
       </section>
 
       <section>
         <h3 class="titulo text-2xl ml-20 text-[#38362a]">
          Final:
         </h3>
+
+      <div class="grid grid-cols-5 grid-rows-3 gap-4 h-150 p-10 px-30">
+
+    
+        <div class="col-span-3 row-span-3 bg-gray-200"></div>
+
+  <!-- bloques pequeños -->
+        <div class="col-span-1 row-span-1 bg-gray-200"></div>
+        <div class="col-span-1 row-span-1 bg-gray-200"></div>
+        <div class="col-span-1 row-span-1 bg-gray-200"></div>
+        <div class="col-span-1 row-span-1 bg-gray-200"></div>
+        <div class="col-span-1 row-span-1 bg-gray-200"></div>
+        <div class="col-span-1 row-span-1 bg-gray-200"></div>
+
+      </div>
+      
       </section>
 
     </div>
@@ -110,12 +136,5 @@ const bocetos = computed(() => proyecto.value?.bocetos || []);
     font-family: Special;
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
 
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 </style>

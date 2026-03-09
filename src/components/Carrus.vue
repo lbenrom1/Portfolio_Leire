@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
 
 
 interface Props {
@@ -38,8 +39,14 @@ const props = withDefaults(defineProps<Props>(), {
   :class="[props.bg,'w-full max-w-md md:max-w-2xl lg:max-w-4xl']"
   :opts="{
     loop:props.loop,
-    dragFree: props.dragFree
+    dragFree: props.dragFree,
   }"
+  :plugins="[
+    Autoplay({
+      delay: props.autoplayDelay,
+      stopOnInteraction: false
+    })
+  ]"
   >
     <CarouselContent>
       <CarouselItem v-for="(photo,index) in props.photos" :key="index">
@@ -50,7 +57,7 @@ const props = withDefaults(defineProps<Props>(), {
               <img 
               :src="`${props.basePath}/${photo}.jpg`" 
               :alt="`imagen ${index + 1}`"
-              class="w-full h-full object-container  ">
+              class="w-auto h-100 object-container rounded-lg">
 
             </CardContent>
           </Card>

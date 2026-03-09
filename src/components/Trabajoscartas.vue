@@ -18,7 +18,7 @@ const PropsTrabajo = defineProps< {
   imagePath: string,
   baseRoute: string,
   primaryColor?: string,
-  secondaryColor?: string,
+  textColor?: string,
   accentColor?: string
 }>();
 
@@ -79,27 +79,30 @@ const navigate = (id: number) => {
       }"
       class="px-2 py-2 rounded-full font-medium transition-colors"
         >
-           <ChevronLeft />
+           <ChevronLeft 
+           :color=" nuncPagina === 1 ? primaryColor : textColor"/>
         </button>
     </div>
 
-    <div class="col-span-2 xl:col-span-1 flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10 lg:gap-5 xl:gap-25 w-full max-w-350 my-3 mx-auto transition-all order-1 xl:order-0">
+    <div class="col-span-2 xl:col-span-1 flex flex-col md:flex-row justify-center items-center my-3 gap-5 md:gap-10 lg:gap-5 xl:gap-25 w-full max-w-350 mx-auto transition-all order-1 xl:order-0">
         <Card 
-         class="cursor-pointer w-70 h-80 lg:w-90 lg:h-85 hover:text-white hover:w-80 hover:h-90 lg:hover:w-100 lg:hover:h-90 border-none transition-all"
+         class="cursor-pointer w-70 h-80 lg:w-90 lg:h-90 hover:w-80 hover:h-90 lg:hover:w-100  border-[#38362a] border-3 transition-all"
          v-for="trabajo in visibles" 
          :key="trabajo.id"
-         :style="{ backgroundColor: primaryColor }"
+         :style="{ backgroundColor: primaryColor, }"
          @click="navigate(trabajo.id)"
          >
           <CardContent 
-           class="flex flex-col justify-center items-center gap-1 w-full px-0"
+           class="flex flex-col justify-start items-center gap-1 w-full px-0"
            @click="router.push(`${PropsTrabajo.baseRoute}/${ trabajo.id }`)"
           >
             <img 
             :src="`${ PropsTrabajo.imagePath }${trabajo.imago}`" 
             alt="trabajo.nomen"
-            class="w-60 h-60 lg:w-70 lg:h-70 object-cover object-top rounded border-none">
-            <h2 class="font-medium text-xl text-[#38362a]">{{trabajo.nomen}}</h2>
+            class="w-60 h-60 lg:w-80 lg:h-70 object-contain object-center rounded border-none">
+            <h2 class="font-medium text-xl"
+            :style="{color: textColor }"
+            >{{trabajo.nomen}}</h2>
           </CardContent>
       </Card>
     </div>
@@ -112,11 +115,13 @@ const navigate = (id: number) => {
           @click="ireAdPaginam(nuncPagina + 1)"
           :disabled="nuncPagina === totalPaginae"
           :style="{
-           backgroundColor: nuncPagina === totalPaginae ? accentColor : primaryColor
+           backgroundColor: nuncPagina === totalPaginae ? accentColor : primaryColor,
           }"
           class="px-2 py-2 rounded-full font-medium transition-colors order-5 lg:order-0"
           >
-            <ChevronRight />
+            <ChevronRight 
+            :color=" nuncPagina === totalPaginae ? primaryColor : textColor"
+            />
           </button>
     </div>
   </div>
