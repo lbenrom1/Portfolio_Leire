@@ -137,17 +137,18 @@ const menuItems = [
          Bocetos:
         </h3>
 
-        <div class="no-scrollbar w-full overflow-hidden" ref="emblaRef">
+        <div class="no-scrollbar w-full overflow-x-auto" ref="emblaRef">
 
-          <div class="flex gap-6 py-6 px-10">
+          <div class="flex w-max gap-6 py-6 px-10">
 
-            <img
+            <div
              v-for="boceto in bocetos"
-             :key="boceto"
+             :key="boceto">
+            <img
              :src="`/imagines/Ilustracion/${boceto}.jpg`"
-             class="h-60 w-auto object-contain rounded-lg flex-none cursor-grab"
+             class="block h-80 w-auto object-contain rounded-lg flex-none cursor-grab"
             />
-
+            </div>
           </div>
 
         </div>

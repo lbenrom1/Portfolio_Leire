@@ -32,7 +32,7 @@ import { RouterLink } from 'vue-router';
 <div class="absolute z-0 bg-[#439c82] w-full h-60 py-5 translate-y-35"></div>
     <section class="relative z-10 p-5 h-full justify-around gap-7 mt-3 ">
       <div class="w-full flex justify-between items-center pt-3 ml-10">
-        <p class="w-100  md:w-150 lg:w-200 xl:w-250 text-[#201e1a] mt-5 md:mt-10 pointer-events-none">Lorem ipsum dolor sit amet consectetur adipiscing elit, enim aliquet eros phasellus sodales lectus sapien ligula, luctus aenean mus mauris lacus leo. Ornare quis condimentum nulla eros est rhoncus malesuada molestie, leo cubilia sociosqu posuere etiam tristique class diam, donec non dis ultrices odio ut at. Curae et lacinia egestas class ultrices primis porta placerat sodales eros, vitae bibendum nunc feugiat pretium molestie mollis a luctus dictum, scelerisque suscipit ac praesent aliquam eu neque varius taciti.</p>
+        <p class="w-100  md:w-150 lg:w-200 xl:w-250 text-[#201e1a] mt-5 md:mt-10 pointer-events-none">La ilustración es donde más segura me siento, al expresar mi visión artística. Una de las cosas por las que creo que se debe esto es que desde el primer momento que empecé a dedicar tiempo al arte, al principio como hobbie, siempre lo hice ilustrando lo que veía en mi día a día. Estas ilustraciones, fueron las que me llevaron a probar nuevas técnicas. Después me interese por la teoría y práctica, aprendiendo de anatomía, una cosa de lo que me gusta del dibujar.</p>
       </div>
     </section>
   </div>  

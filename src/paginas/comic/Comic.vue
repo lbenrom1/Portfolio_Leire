@@ -32,7 +32,7 @@ import { RouterLink } from 'vue-router';
 <div class="absolute z-0 bg-[#ebd0a1] w-full h-60 py-5 translate-y-35"></div>
     <section class="relative z-10 p-5 h-full justify-around gap-7 mt-3 ">
       <div class="w-full flex justify-between items-center pt-3 ml-10">
-        <p class="w-100  md:w-150 lg:w-200 xl:w-250 text-[#201e1a] mt-5 md:mt-10 pointer-events-none">Lorem ipsum dolor sit amet consectetur adipiscing elit, enim aliquet eros phasellus sodales lectus sapien ligula, luctus aenean mus mauris lacus leo. Ornare quis condimentum nulla eros est rhoncus malesuada molestie, leo cubilia sociosqu posuere etiam tristique class diam, donec non dis ultrices odio ut at. Curae et lacinia egestas class ultrices primis porta placerat sodales eros, vitae bibendum nunc feugiat pretium molestie mollis a luctus dictum, scelerisque suscipit ac praesent aliquam eu neque varius taciti.</p>
+        <p class="w-100  md:w-150 lg:w-200 xl:w-200 text-[#201e1a] mt-5 md:mt-10 pointer-events-none">El comic es la disciplina que más me apasiona. Siempre creci leyendo historietas, sean de la manera tradicional en TBOs o en internet. Llegando en mi adolescencia a los mangas y comics americanos de supererues. Los cuales han sido la mayor influencia en mi estilo artístico.</p>
       </div>
     </section>
   </div>  
