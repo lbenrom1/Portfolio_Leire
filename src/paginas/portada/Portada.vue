@@ -36,18 +36,15 @@ const carpetas = [
      
   },
   { 
-    texto: "OTROS", 
+    texto: "CONTACTAME", 
     ruta: "/otros", 
     img: "/imagines/Portada/archivo 4.png", 
     textTop: '10%', 
-    textLeft: '55%' 
+    textLeft: '51%' 
   },
 ]
 
-const videreMenu = ref<boolean>(false)
-
-const cerrarMenu = ref<boolean>(false) 
-
+const videreMenu = ref<boolean>(false) 
 
 </script>
 

@@ -11,12 +11,10 @@ import Navigation from '@/components/Navigation.vue';
 
 const route = useRoute();
 
-// Computed y otras cosas...
 const proyecto = computed(() =>
   proyectos.find(p => p.id === Number(route.params.id))
 );
 
-// Al montar el componente, hacemos scroll
 onMounted(() => {
   scrollToSection('#presentación');
 });

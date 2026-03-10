@@ -1,5 +1,6 @@
 
 import Comic from "@/paginas/comic/Comic.vue";
+import TrabajosComic from "@/paginas/comic/TrabajosComic.vue";
 import Diseño from "@/paginas/diseño/Diseño.vue";
 import TrabajosDiseño from "@/paginas/diseño/TrabajosDiseño.vue";
 import Ilustracion from "@/paginas/ilustracion/Ilustracion.vue";
@@ -30,6 +31,13 @@ export const router = createRouter({
       path: '/comic',
       name: 'comic',
       component: Comic,
+      children:[
+        {
+          path:':id',
+          name:'comic-trabajo',
+          component: TrabajosComic
+        }
+      ]
     },
     {
       path: '/diseño',

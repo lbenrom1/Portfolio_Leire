@@ -6,22 +6,20 @@ import { proyectos } from './data';
 
 <template>
   <div class="relative pt-3 bg-[#38362a] overflow-hidden">
+    <RouterLink to="/">
+      <div class="relative mt-2 inline-block min-w-5xl lg:w-full -translate-x-115 sm:-translate-x-70 md:-translate-x-40 lg:translate-x-0">
+        <img
+         src="/imagines/Portada/archivo 1.png"
+         class="carpetas absolute h-auto object-cover z-0 min-w-5xl lg:w-full"
+        />
+        <h1 
+         class="titulo absolute z-10 mt-5 text-xl lg:text-2xl xl:text-4xl"
+        >
+          DISEÑO
+        </h1>
+      </div>
+    </RouterLink>
 
-    <div class="relative mt-2 inline-block
-         min-w-5xl lg:w-full
-         -translate-x-115 sm:-translate-x-70 md:-translate-x-40 lg:translate-x-0">
-      <img
-       src="/imagines/Portada/archivo 1.png"
-       class="carpetas absolute h-auto object-cover z-0  
-           min-w-5xl lg:w-full"
-      />
-      <h1 
-       class="titulo absolute z-10 mt-5 text-xl lg:text-2xl xl:text-4xl"
-      >
-        DISEÑO
-      </h1>
-
-</div>
 <div class="absolute z-0 bg-[#9b4342] w-full h-60 py-5 translate-y-35"></div>
     <section class="relative z-10 p-5 h-full justify-around gap-7 mt-3 ">
       <div class="w-full flex justify-between items-center pt-3 ml-10">
@@ -32,17 +30,20 @@ import { proyectos } from './data';
       
       <section class="bg-[#9b4342] w-full py-10">
        <div class="flex justify-center px-5 -translate-y-5">
+        <!--Cambiar luego esto-->
         <Trabajoscartas 
          :items="proyectos" 
-         imagePath="/imagines/Diseño/" 
+         imagePath="/imagines/Ilustracion/" 
          baseRoute="/diseño" 
-         primaryColor="#ebd0a1"
+         primaryColor="#9b4342"
          secondaryColor="#ebd0a1"
          accentColor="#9b4342"
         />
        </div>
       </section>
-    
+    <div>
+      <RouterView/>
+    </div>
     
 </template>
 
