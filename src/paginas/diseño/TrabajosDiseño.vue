@@ -100,7 +100,7 @@ const menuItems = [
         <div class="  bg-[#9b4342] w-full flex justify-center items-center min-h-[60vh] lg:min-h-[80vh]">
           <Carrus
            :photos="photos"
-           basePath="/imagines/Ilustracion"
+           basePath="/imagines/Diseño"
            :autoplay-delay="2000"
            bg="bg-[#9b4342]"
            text="text-[#38362a]"
@@ -125,8 +125,8 @@ const menuItems = [
           </p>
 
           <img
-          :src="`/imagines/Ilustracion/${proyecto?.imago}`"
-          class=" w-100 h-auto mr-0 ml-10 md:ml-20 lg:ml-0 md:mr-10 rounded-lg"
+          :src="`/imagines/Diseño/${proyecto?.imago}`"
+          class=" w-100 h-auto max-h-100 object-contain mr-0 ml-10 md:ml-20 lg:ml-0 md:mr-10 rounded-lg"
           />
         </div>
        </section>
@@ -137,17 +137,18 @@ const menuItems = [
          Bocetos:
         </h3>
 
-        <div class="no-scrollbar w-full overflow-hidden" ref="emblaRef">
+        <div class="no-scrollbar w-full overflow-x-auto" ref="emblaRef">
 
-          <div class="flex gap-6 py-6 px-10">
+          <div class="flex w-max gap-6 py-6 px-10">
 
-            <img
+            <div
              v-for="boceto in bocetos"
-             :key="boceto"
-             :src="`/imagines/Ilustracion/${boceto}.jpg`"
-             class="h-60 w-auto object-contain rounded-lg flex-none cursor-grab"
+             :key="boceto">
+            <img
+             :src="`/imagines/Diseño/${boceto}.jpg`"
+             class="block h-80 w-auto object-contain rounded-lg flex-none cursor-grab"
             />
-
+            </div>
           </div>
 
         </div>
@@ -180,7 +181,7 @@ const menuItems = [
         <div class="col-span-3 row-span-3 bg-[#9b4342] rounded-lg">
           <img
            v-if="finales.length"
-           :src="`/imagines/Ilustracion/${finales[currentIndex]}.jpg`"
+           :src="`/imagines/Diseño/${finales[currentIndex]}.jpg`"
            class="w-full min-h-70 max-h-full object-contain rounde-lg "
           />
         </div>
@@ -192,7 +193,7 @@ const menuItems = [
          class="col-span-1 row-span-1"
         >
           <img
-           :src="`/imagines/Ilustracion/${final}.jpg`"
+           :src="`/imagines/Diseño/${final}.jpg`"
            class=" object-cover rounded-lg w-full h-full"
           />
         </div>

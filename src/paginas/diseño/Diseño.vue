@@ -23,7 +23,7 @@ import { proyectos } from './data';
 <div class="absolute z-0 bg-[#9b4342] w-full h-60 py-5 translate-y-35"></div>
     <section class="relative z-10 p-5 h-full justify-around gap-7 mt-3 ">
       <div class="w-full flex justify-between items-center pt-3 ml-10">
-        <p class="w-100  md:w-150 lg:w-200 xl:w-250 text-[#201e1a] mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur adipiscing elit, enim aliquet eros phasellus sodales lectus sapien ligula, luctus aenean mus mauris lacus leo. Ornare quis condimentum nulla eros est rhoncus malesuada molestie, leo cubilia sociosqu posuere etiam tristique class diam, donec non dis ultrices odio ut at. Curae et lacinia egestas class ultrices primis porta placerat sodales eros, vitae bibendum nunc feugiat pretium molestie mollis a luctus dictum, scelerisque suscipit ac praesent aliquam eu neque varius taciti.</p>
+        <p class="w-100  md:w-150 lg:w-200 xl:w-250 text-[#201e1a] mt-5 md:mt-10">El diseño, es una disciplima que empece a practicar en bachiller pero me encanto tanto que decidí estudiarlo. Con el diseño descubrí a grandes referentes como toda la cartelería modernista del siglo XVIII o los carteles de las vanguardías posteriores, que me han influenciado en toda mi producción. Ademas, que con el diseño se me habrieron diferentes caminos como el diseño editorial, de carteleria o de paguinas web como esta.</p>
       </div>
     </section>
   </div>  
@@ -33,7 +33,7 @@ import { proyectos } from './data';
         <!--Cambiar luego esto-->
         <Trabajoscartas 
          :items="proyectos" 
-         imagePath="/imagines/Ilustracion/" 
+         imagePath="/imagines/Diseño/" 
          baseRoute="/diseño" 
          primaryColor="#9b4342"
          secondaryColor="#ebd0a1"
