@@ -27,7 +27,7 @@ import { RouterLink } from 'vue-router';
       </RouterLink>
 
       <div class="w-full flex justify-between items-center pt-3 ml-10">
-        <p class="w-100  md:w-150 lg:w-200 xl:w-250 text-[#201e1a] mt-5 md:mt-10">El diseño, es una disciplima que empece a practicar en bachiller pero me encanto tanto que decidí estudiarlo. Con el diseño descubrí a grandes referentes como toda la cartelería modernista del siglo XVIII o los carteles de las vanguardías posteriores, que me han influenciado en toda mi producción. Ademas, que con el diseño se me habrieron diferentes caminos como el diseño editorial, de carteleria o de paguinas web como esta.</p>
+        <p class="w-100  md:w-150 lg:w-200 xl:w-250 text-[#201e1a] mt-5 md:mt-10">La ilustración es donde más segura me siento, al expresar mi visión artística. Una de las cosas por las que creo que se debe esto es que desde el primer momento que empecé a dedicar tiempo al arte, al principio como hobbie, siempre lo hice ilustrando lo que veía en mi día a día. Estas ilustraciones, fueron las que me llevaron a probar nuevas técnicas. Después me interese por la teoría y práctica, aprendiendo de anatomía, una cosa de lo que me gusta del dibujar.</p>
       </div>
     </section>
   </div>  

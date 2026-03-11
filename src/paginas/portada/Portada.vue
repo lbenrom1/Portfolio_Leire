@@ -130,7 +130,7 @@ const videreMenu = ref<boolean>(false)
       <h1 class="titulo text-6xl md:text-8xl lg:text-9xl p-10 pt-30 text-[#ebd0a1] transition-all">PORTFOLIO</h1>
       <div class="flex flex-col p-10 gap-5 w-250 text-[#ebd0a1]">
         <h2 class="titulo text-md">Sobre mi:</h2>
-        <p class="info w-100 md:w-150 lg:w-200 xl:w-250 transition-all">Lorem ipsum dolor sit amet consectetur adipiscing elit aptent euismod, gravida sodales enim non primis cras nullam montes, volutpat dapibus id quam neque arcu duis tortor. Torquent placerat sodales euismod aenean consequat purus aliquam litora dictumst, tempor proin bibendum lobortis porttitor tristique dapibus a, primis ante habitasse egestas mauris imperdiet sagittis quisque. Convallis ante feugiat aptent eleifend sodales vivamus ligula ac, cum vel porttitor quis suscipit odio nec tellus, sapien inceptos ultrices dis lacinia pharetra viverra.</p>
+        <p class="info w-100 md:w-150 lg:w-200 xl:w-250 transition-all">Soy Leire Benítez, una ilustradora de Zaragoza. Desde pequeña supe que me queria dedicarme al diseño y la ilustración. Por ello mis estudios han seguido este camino. Primeramente, con el bachillerato de artes en la EAZ y después con la entrada a la carrera de Diseño  y Tecnologías creativas. En este portfolio vas a poder ver los trabajos de mis primeros años en este aprendizaje como artista.</p>
       </div>
     </div>
 
