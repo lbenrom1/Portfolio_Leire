@@ -4,7 +4,6 @@ import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { proyectos, } from './data';
 import { useRoute, } from 'vue-router';
 import Carrus from '@/components/Carrus.vue';
-import emblaCarouselVue from 'embla-carousel-vue'
 import { scrollToSection } from '@/utils/scrollToSection';
 import Navigation from '@/components/Navigation.vue';
 
@@ -18,22 +17,6 @@ const proyecto = computed(() =>
 onMounted(() => {
   scrollToSection('#presentación');
 });
-
-const [emblaRef] = emblaCarouselVue({
-  dragFree: true,
-  containScroll: "keepSnaps",
-  align: "start"
-})
-
-//const router = useRouter()
-
-//const proyecto =ref<Proyectos | undefined>(
- // proyectos.find(char => char.id === Number(route.params.id))
-//)
-
-//const proyecto = computed(() =>
-//  proyectos.find(p => p.id === Number(route.params.id))
-//)
 
 const photos = computed(() => proyecto.value?.photos || []);
 

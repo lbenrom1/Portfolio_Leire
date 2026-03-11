@@ -24,8 +24,6 @@ const PropsTrabajo = defineProps< {
 
 const router = useRouter();
 
-
-//CONTEO DE CARDS
 const inPagina = 3
 
 const nuncPagina = ref (1)
@@ -45,19 +43,8 @@ const ireAdPaginam = (pagina: number) => {
 
 }
 
-//const paginaNumeri = computed(() => 
-  //  [...Array(totalPaginae.value)].map((_, i) => i + 1)
-//)
-
-//const paginaNumeri: number[] = [...Array(totalPaginae)].map((_, i) => i+1)
-
-
-//const navigate = (id:number) => {
-   // router.push(`${PropsTrabajo.baseRoute}/${id}`)
-//}
-
 const primaryColor = computed(() => PropsTrabajo.primaryColor ?? '#ebd0a1')
-//const secondaryColor = computed(() => PropsTrabajo.secondaryColor ?? '#4c9b55')
+
 const accentColor = computed(() => PropsTrabajo.accentColor ?? '#9be67d')
 
 const navigate = (id: number) => {
