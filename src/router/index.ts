@@ -6,7 +6,6 @@ import TrabajosDiseño from "@/paginas/diseño/TrabajosDiseño.vue";
 import Ilustracion from "@/paginas/ilustracion/Ilustracion.vue";
 import TrabajoIlustracion from "@/paginas/ilustracion/TrabajoIlustracion.vue";
 import Otros from "@/paginas/otros/Otros.vue";
-import Layout from "@/paginas/portada/Layout.vue";
 import Portada from "@/paginas/portada/Portada.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 
@@ -19,13 +18,7 @@ export const router = createRouter({
     {
       path: '/',
       name: 'portada',
-      component: Layout,
-      children:[
-        {
-          path: '',
-          component: Portada
-        }
-      ]
+      component: Portada,
     },
     {
       path: '/comic',

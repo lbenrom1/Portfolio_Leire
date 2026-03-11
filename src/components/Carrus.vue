@@ -57,7 +57,7 @@ const props = withDefaults(defineProps<Props>(), {
               <img 
               :src="`${props.basePath}/${photo}.jpg`" 
               :alt="`imagen ${index + 1}`"
-              class="w-auto h-100 object-container rounded-lg">
+              class="w-auto h-60 md:h-100 object-container rounded-lg">
 
             </CardContent>
           </Card>

@@ -36,7 +36,7 @@ const carpetas = [
      
   },
   { 
-    texto: "CONTACTAME", 
+    texto: "CONTÁCTAME", 
     ruta: "/otros", 
     img: "/imagines/Portada/archivo 4.png", 
     textTop: '10%', 
@@ -108,10 +108,10 @@ const videreMenu = ref<boolean>(false)
 
         <CardTitle class="titulo mt-5 mb-3">Contactos</CardTitle>
 
-        <div class="flex flex-row gap-5 items-center ml-1">
+        <a href="https://www.instagram.com/leire.s_wonderland/" class="flex flex-row gap-5 items-center ml-1 hover:text-[#9b4342]">
           <Instagram />
           @leire.s_wonderland
-        </div>
+        </a>
 
         <div class="flex flex-row gap-5 items-center ml-1">
           <Mail />
@@ -163,10 +163,10 @@ const videreMenu = ref<boolean>(false)
 
     <footer class="absolute pb-5 -bottom-130 md:-bottom-135 lg:-bottom-145 z-50 bg-[#439c82] w-full py-8 text-center ">
         <div>
-	       <strong>Portfolio</strong>
+	       <strong class="titulo text-[#38362a]">Portfolio</strong>
         </div>
 
-        <small>
+        <small class="text-[#38362a]">
 	       Leire Benítez Romeo
         </small>
     </footer>
